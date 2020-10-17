@@ -7367,75 +7367,6 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="BAT-HLD-001-TR">
-<packages>
-<package name="BAT_BAT-HLD-001-TR">
-<wire x1="-10.55" y1="7.55" x2="10.55" y2="7.55" width="0.127" layer="51"/>
-<wire x1="10.55" y1="7.55" x2="10.55" y2="-7.95" width="0.127" layer="51"/>
-<wire x1="10.55" y1="-7.95" x2="-10.55" y2="-7.95" width="0.127" layer="51"/>
-<wire x1="-10.55" y1="-7.95" x2="-10.55" y2="7.55" width="0.127" layer="51"/>
-<wire x1="-10.55" y1="2.87" x2="-10.55" y2="7.55" width="0.127" layer="21"/>
-<wire x1="-10.55" y1="7.55" x2="-6" y2="7.55" width="0.127" layer="21"/>
-<wire x1="6" y1="7.55" x2="10.55" y2="7.55" width="0.127" layer="21"/>
-<wire x1="10.55" y1="7.55" x2="10.55" y2="2.87" width="0.127" layer="21"/>
-<wire x1="-10.55" y1="-2.87" x2="-10.55" y2="-7.95" width="0.127" layer="21"/>
-<wire x1="-10.55" y1="-7.95" x2="-5.5" y2="-7.95" width="0.127" layer="21"/>
-<wire x1="5.5" y1="-7.95" x2="10.55" y2="-7.95" width="0.127" layer="21"/>
-<wire x1="10.55" y1="-7.95" x2="10.55" y2="-2.87" width="0.127" layer="21"/>
-<wire x1="-12.95" y1="9.15" x2="12.95" y2="9.15" width="0.05" layer="39"/>
-<wire x1="12.95" y1="9.15" x2="12.95" y2="-9.15" width="0.05" layer="39"/>
-<wire x1="12.95" y1="-9.15" x2="-12.95" y2="-9.15" width="0.05" layer="39"/>
-<wire x1="-12.95" y1="-9.15" x2="-12.95" y2="9.15" width="0.05" layer="39"/>
-<text x="-10.5" y="9.5" size="1.778" layer="25">&gt;NAME</text>
-<text x="-10.5" y="-9.5" size="1.778" layer="27" align="top-left">&gt;VALUE</text>
-<smd name="N1" x="0" y="0" dx="17.8" dy="17.8" layer="1" roundness="100" cream="no"/>
-<smd name="P1" x="-11.45" y="0" dx="2.5" dy="5.1" layer="1"/>
-<smd name="P2" x="11.45" y="0" dx="2.5" dy="5.1" layer="1"/>
-</package>
-</packages>
-<symbols>
-<symbol name="BAT-HLD-001-TR">
-<wire x1="-1.27" y1="2.54" x2="-1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="-3.175" y1="2.54" x2="-3.175" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="1.905" x2="-2.54" y2="1.905" width="0.254" layer="94"/>
-<text x="-3.81" y="3.81" size="1.778" layer="95">&gt;NAME</text>
-<text x="-3.81" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="+" x="-7.62" y="0" visible="pad" length="middle" direction="pas"/>
-<pin name="-" x="7.62" y="0" visible="pad" length="middle" direction="pas" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="BAT-HLD-001-TR" prefix="BT">
-<description>Battery Retainer Coin, 20.0mm 1 Cell SMD (SMT) Tab </description>
-<gates>
-<gate name="G$1" symbol="BAT-HLD-001-TR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="BAT_BAT-HLD-001-TR">
-<connects>
-<connect gate="G$1" pin="+" pad="P1 P2"/>
-<connect gate="G$1" pin="-" pad="N1"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value=" Battery Retainer Coin, 20.0mm 1 Cell SMD (SMT) Tab "/>
-<attribute name="DIGI-KEY_PART_NUMBER" value="BAT-HLD-001-TRCT-ND"/>
-<attribute name="MF" value="Linx Technologies"/>
-<attribute name="MP" value="BAT-HLD-001-TR"/>
-<attribute name="PACKAGE" value="None"/>
-<attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/BAT-HLD-001-TR/?ref=eda"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="328PBMUR">
 <packages>
 <package name="32M1-A_MCH">
@@ -13389,6 +13320,16 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <smd name="2" x="1.3" y="-5.2" dx="2.6" dy="1.4" layer="1"/>
 <rectangle x1="3" y1="-5.9" x2="9" y2="0" layer="21"/>
 </package>
+<package name="RK-2032">
+<rectangle x1="0" y1="0" x2="21.2" y2="7" layer="21"/>
+<dimension x1="0" y1="7" x2="0" y2="0" x3="-16.5" y3="3.5" textsize="1.778" layer="20"/>
+<dimension x1="0" y1="7" x2="21.2" y2="7" x3="10.6" y3="20.6" textsize="1.778" layer="20"/>
+<dimension x1="23.3" y1="-8.3" x2="-2.1" y2="-8.3" x3="10.6" y3="11.2" textsize="1.778" layer="20"/>
+<dimension x1="23.3" y1="1" x2="23.3" y2="6.05" x3="6.25" y3="3.525" textsize="1.778" layer="20"/>
+<smd name="P$1" x="22.21" y="3.53" dx="2.1" dy="5.05" layer="1"/>
+<smd name="P$2" x="-1.04" y="3.53" dx="2.1" dy="5.05" layer="1"/>
+<smd name="P$3" x="10.85" y="3.6" dx="4" dy="4" layer="1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="SPDT">
@@ -13430,6 +13371,19 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <pin name="4" x="5.08" y="-2.54" visible="pad" length="short" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="2" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas" swaplevel="2"/>
 </symbol>
+<symbol name="HOLDER">
+<wire x1="-0.635" y1="0.635" x2="-0.635" y2="0" width="0.4064" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-0.635" y2="0" width="0.1524" layer="94"/>
+<wire x1="-0.635" y1="0" x2="-0.635" y2="-0.635" width="0.4064" layer="94"/>
+<wire x1="0.635" y1="2.54" x2="0.635" y2="0" width="0.4064" layer="94"/>
+<wire x1="0.635" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.635" y1="0" x2="0.635" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-1.27" y="3.175" size="1.778" layer="95">&gt;NAME</text>
+<text x="-1.27" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<text x="1.524" y="0.508" size="1.778" layer="94">+</text>
+<pin name="+" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="-" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="SK-3296S-01-L1">
@@ -13467,6 +13421,22 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 </device>
 </devices>
 </deviceset>
+<deviceset name="RK-2032">
+<gates>
+<gate name="G$1" symbol="HOLDER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="RK-2032">
+<connects>
+<connect gate="G$1" pin="+" pad="P$1 P$2"/>
+<connect gate="G$1" pin="-" pad="P$3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -13484,7 +13454,6 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <part name="C3" library="Capacitor" library_urn="urn:adsk.eagle:library:16290819" deviceset="C-US" device="CHIP-0805(2012-METRIC)" package3d_urn="urn:adsk.eagle:package:16290897/2" technology="_" value="100n"/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device=""/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
-<part name="BT1" library="BAT-HLD-001-TR" deviceset="BAT-HLD-001-TR" device=""/>
 <part name="U1" library="328PBMUR" deviceset="ATMEGA328PB-MUR" device=""/>
 <part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
@@ -13540,6 +13509,7 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 </spice>
 <attribute name="NOPOP" value="NOPOP"/>
 </part>
+<part name="U$3" library="CustomParts" deviceset="RK-2032" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13547,12 +13517,11 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <text x="53.34" y="-177.8" size="1.778" layer="91">Place close to VCC/GND pairs</text>
 <text x="60.96" y="-175.26" size="1.778" layer="91">Decoupling</text>
 <text x="60.96" y="-208.28" size="1.778" layer="91">Decoupling</text>
-<text x="265.938" y="-209.296" size="3.81" layer="91">C</text>
+<text x="265.938" y="-209.296" size="3.81" layer="91">D</text>
 <text x="213.36" y="-208.28" size="3.81" layer="91">0000001</text>
 <text x="101.6" y="-175.26" size="1.778" layer="91">Current Limiting</text>
 <text x="101.6" y="-208.28" size="1.778" layer="91">Current Limiting</text>
 <text x="15.24" y="-175.26" size="1.778" layer="91">Battery</text>
-<text x="15.24" y="-208.28" size="1.778" layer="91">Battery</text>
 <text x="134.62" y="-175.26" size="1.778" layer="91">RESET LINE PULLUP</text>
 <text x="134.62" y="-208.28" size="1.778" layer="91">RESET LINE PULLUP</text>
 <text x="215.9" y="-144.78" size="1.778" layer="91">Programming Signal Resistors</text>
@@ -13637,10 +13606,6 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <instance part="R1" gate="G$1" x="109.22" y="-190.5" smashed="yes" rot="R90">
 <attribute name="NAME" x="107.7214" y="-194.31" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="112.522" y="-194.31" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="BT1" gate="G$1" x="17.78" y="-193.04" smashed="yes" rot="R270">
-<attribute name="NAME" x="21.59" y="-189.23" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="12.7" y="-184.15" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="U1" gate="A" x="104.14" y="-114.3" smashed="yes">
 <attribute name="NAME" x="111.6076" y="-105.1814" size="2.0828" layer="95" ratio="6" rot="SR0"/>
@@ -13779,7 +13744,7 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <attribute name="NAME" x="238.75376875" y="-106.6644" size="1.271559375" layer="95"/>
 <attribute name="VALUE" x="238.7598" y="-129.5404" size="1.27005" layer="96"/>
 </instance>
-<instance part="U$1" gate="G$1" x="15.24" y="-137.16" smashed="yes" rot="R90"/>
+<instance part="U$1" gate="G$1" x="16.51" y="-137.668" smashed="yes" rot="R90"/>
 <instance part="U$2" gate="G$1" x="78.74" y="-81.28" smashed="yes" rot="MR0">
 <attribute name="NOPOP" x="76.2" y="-78.74" size="1.778" layer="96" rot="MR0"/>
 </instance>
@@ -13787,6 +13752,10 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <attribute name="NAME" x="98.0186" y="-77.47" size="1.778" layer="95" rot="MR90"/>
 <attribute name="VALUE" x="93.218" y="-77.47" size="1.778" layer="96" rot="MR90"/>
 <attribute name="NOPOP" x="91.186" y="-78.232" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="U$3" gate="G$1" x="15.24" y="-195.58" smashed="yes" rot="R90">
+<attribute name="NAME" x="12.065" y="-196.85" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="20.32" y="-196.85" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -13809,11 +13778,6 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <label x="43.18" y="-205.74" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="BT1" gate="G$1" pin="-"/>
-<wire x1="17.78" y1="-200.66" x2="17.78" y2="-205.74" width="0.1524" layer="91"/>
-<label x="17.78" y="-205.74" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="U1" gate="A" pin="GND"/>
 <wire x1="142.24" y1="-152.4" x2="149.86" y2="-152.4" width="0.1524" layer="91"/>
 <label x="149.86" y="-152.4" size="1.778" layer="95"/>
@@ -13830,8 +13794,8 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="-132.08" x2="12.7" y2="-124.46" width="0.1524" layer="91"/>
-<label x="12.7" y="-124.46" size="1.778" layer="95"/>
+<wire x1="13.97" y1="-132.588" x2="13.97" y2="-124.968" width="0.1524" layer="91"/>
+<label x="13.97" y="-124.968" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="71.12" y1="-81.28" x2="71.12" y2="-83.82" width="0.1524" layer="91"/>
@@ -13842,6 +13806,11 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <pinref part="U$2" gate="G$1" pin="4"/>
 <wire x1="71.12" y1="-83.82" x2="73.66" y2="-83.82" width="0.1524" layer="91"/>
 <junction x="71.12" y="-83.82"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="-"/>
+<wire x1="15.24" y1="-200.66" x2="15.24" y2="-205.74" width="0.1524" layer="91"/>
+<label x="15.24" y="-205.74" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PE3" class="0">
@@ -14143,8 +14112,8 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="2"/>
-<wire x1="15.24" y1="-142.24" x2="15.24" y2="-149.86" width="0.1524" layer="91"/>
-<label x="15.24" y="-149.86" size="1.778" layer="95"/>
+<wire x1="16.51" y1="-142.748" x2="16.51" y2="-150.368" width="0.1524" layer="91"/>
+<label x="16.51" y="-150.368" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R9" gate="G$1" pin="2"/>
@@ -14437,14 +14406,14 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 </net>
 <net name="VCC_BATTERY" class="0">
 <segment>
-<pinref part="BT1" gate="G$1" pin="+"/>
-<wire x1="17.78" y1="-177.8" x2="17.78" y2="-185.42" width="0.1524" layer="91"/>
-<label x="17.78" y="-180.34" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$1" pin="3"/>
+<wire x1="19.05" y1="-132.588" x2="19.05" y2="-127.508" width="0.1524" layer="91"/>
+<label x="19.05" y="-127.508" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="3"/>
-<wire x1="17.78" y1="-132.08" x2="17.78" y2="-127" width="0.1524" layer="91"/>
-<label x="17.78" y="-127" size="1.778" layer="95"/>
+<pinref part="U$3" gate="G$1" pin="+"/>
+<wire x1="15.24" y1="-190.5" x2="15.24" y2="-182.88" width="0.1524" layer="91"/>
+<label x="15.24" y="-182.88" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
