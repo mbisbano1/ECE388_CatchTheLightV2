@@ -13303,17 +13303,11 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 <smd name="P1" x="1.155" y="0.6025" dx="1.2" dy="0.9" layer="1" rot="R90"/>
 <smd name="P3" x="5.655" y="0.6025" dx="1.2" dy="0.9" layer="1" rot="R90"/>
 <smd name="P2" x="4.155" y="0.615" dx="1.2" dy="0.9" layer="1" rot="R90"/>
-<dimension x1="0" y1="0" x2="0" y2="-1.55" x3="10.7" y3="-0.775" textsize="1.778" layer="20"/>
-<dimension x1="0" y1="0" x2="3.4" y2="0" x3="1.7" y3="-3.4" textsize="1.778" layer="20"/>
-<dimension x1="3.4" y1="-4.25" x2="1.85" y2="-4.25" x3="2.625" y3="1.65" textsize="1.778" layer="20"/>
-<dimension x1="3.4" y1="-5.05" x2="4.9" y2="-5.05" x3="4.15" y3="1.65" textsize="1.778" layer="20"/>
 <hole x="1.85" y="-1.55" drill="0.75"/>
 <hole x="4.9" y="-1.55" drill="0.75"/>
+<rectangle x1="3" y1="-4.6" x2="4.3" y2="-3.1" layer="21"/>
 </package>
 <package name="TS-1102S-C-A-B">
-<dimension x1="0" y1="0" x2="12" y2="0" x3="6" y3="-15.55" textsize="1.778" layer="20"/>
-<dimension x1="0" y1="0" x2="0" y2="-5.9" x3="28.3" y3="-2.95" textsize="1.778" layer="20"/>
-<dimension x1="22.2" y1="-1.4" x2="22.2" y2="-4.5" x3="-2.2" y3="-2.95" textsize="1.778" layer="20"/>
 <smd name="1" x="1.3" y="-0.7" dx="2.6" dy="1.4" layer="1"/>
 <smd name="3" x="10.7" y="-0.7" dx="2.6" dy="1.4" layer="1"/>
 <smd name="4" x="10.7" y="-5.2" dx="2.6" dy="1.4" layer="1"/>
@@ -13322,10 +13316,6 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 </package>
 <package name="RK-2032">
 <rectangle x1="0" y1="0" x2="21.2" y2="7" layer="21"/>
-<dimension x1="0" y1="7" x2="0" y2="0" x3="-16.5" y3="3.5" textsize="1.778" layer="20"/>
-<dimension x1="0" y1="7" x2="21.2" y2="7" x3="10.6" y3="20.6" textsize="1.778" layer="20"/>
-<dimension x1="23.3" y1="-8.3" x2="-2.1" y2="-8.3" x3="10.6" y3="11.2" textsize="1.778" layer="20"/>
-<dimension x1="23.3" y1="1" x2="23.3" y2="6.05" x3="6.25" y3="3.525" textsize="1.778" layer="20"/>
 <smd name="P$1" x="22.21" y="3.53" dx="2.1" dy="5.05" layer="1"/>
 <smd name="P$2" x="-1.04" y="3.53" dx="2.1" dy="5.05" layer="1"/>
 <smd name="P$3" x="10.85" y="3.6" dx="4" dy="4" layer="1"/>
@@ -13497,7 +13487,7 @@ THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND WITHOUT ANY EXPRESS OR
 </part>
 <part name="J1" library="TC2030-IDC-NL" deviceset="TC2030-IDC-NL" device=""/>
 <part name="U$1" library="CustomParts" deviceset="SK-3296S-01-L1" device=""/>
-<part name="U$2" library="CustomParts" deviceset="TS-1102S-C-A-B" device="" value="">
+<part name="U$2" library="CustomParts" deviceset="TS-1102S-C-A-B" device="" value="TS-1102S-C-A-B">
 <attribute name="NOPOP" value="NOPOP"/>
 </part>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k">
