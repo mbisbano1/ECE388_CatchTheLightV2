@@ -84,6 +84,10 @@ Discarded input sections
                 0x00000000        0xc main.o
  .text.ClearLed
                 0x00000000       0x18 main.o
+ .text.ReportScore
+                0x00000000      0x1a4 main.o
+ .progmem.gcc_sw_table.ReportScore
+                0x00000000       0x3a main.o
  .text          0x00000000        0x0 qtouch/touch.o
  .data          0x00000000        0x0 qtouch/touch.o
  .bss           0x00000000        0x0 qtouch/touch.o
@@ -405,7 +409,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x2892
+.text           0x00000000     0x2846
  *(.vectors)
  .vectors       0x00000000       0xb4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.5.362/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
                 0x00000000                __vector_default
@@ -525,142 +529,139 @@ END GROUP
                 0x000001a4                NextLed
  .text.Next0    0x00000246      0x148 main.o
                 0x00000246                Next0
- .text.Next1    0x0000038e       0x7e main.o
+ .text.Next1    0x0000038e       0xa4 main.o
                 0x0000038e                Next1
- .text.Next2    0x0000040c      0x100 main.o
-                0x0000040c                Next2
- .text.Next3    0x0000050c      0x10c main.o
-                0x0000050c                Next3
- .text.Next4    0x00000618       0xe8 main.o
-                0x00000618                Next4
- .text.Next5    0x00000700       0xe8 main.o
-                0x00000700                Next5
- .text.Next6    0x000007e8      0x124 main.o
-                0x000007e8                Next6
- .text.Next7    0x0000090c       0xc6 main.o
-                0x0000090c                Next7
- .text.Next8    0x000009d2      0x16a main.o
-                0x000009d2                Next8
- .text.Next9    0x00000b3c      0x12e main.o
-                0x00000b3c                Next9
- .text.ReportScore
-                0x00000c6a       0x82 main.o
-                0x00000c6a                ReportScore
- .text.main     0x00000cec       0x5e main.o
-                0x00000cec                main
+ .text.Next2    0x00000432      0x100 main.o
+                0x00000432                Next2
+ .text.Next3    0x00000532      0x10c main.o
+                0x00000532                Next3
+ .text.Next4    0x0000063e       0xe8 main.o
+                0x0000063e                Next4
+ .text.Next5    0x00000726       0xe8 main.o
+                0x00000726                Next5
+ .text.Next6    0x0000080e      0x124 main.o
+                0x0000080e                Next6
+ .text.Next7    0x00000932       0xc6 main.o
+                0x00000932                Next7
+ .text.Next8    0x000009f8      0x16a main.o
+                0x000009f8                Next8
+ .text.Next9    0x00000b62      0x12e main.o
+                0x00000b62                Next9
+ .text.main     0x00000c90       0x6e main.o
+                0x00000c90                main
  .text.__vector_15
-                0x00000d4a       0xde main.o
-                0x00000d4a                __vector_15
+                0x00000cfe       0xde main.o
+                0x00000cfe                __vector_15
  .text.qtm_measure_complete_callback
-                0x00000e28        0x8 qtouch/touch.o
+                0x00000ddc        0x8 qtouch/touch.o
  .text.qtm_post_process_complete
-                0x00000e30       0x26 qtouch/touch.o
+                0x00000de4       0x26 qtouch/touch.o
  .text.qtm_error_callback
-                0x00000e56       0x20 qtouch/touch.o
+                0x00000e0a       0x20 qtouch/touch.o
  .text.init_complete_callback
-                0x00000e76       0x30 qtouch/touch.o
+                0x00000e2a       0x30 qtouch/touch.o
  .text.touch_init
-                0x00000ea6       0x86 qtouch/touch.o
-                0x00000ea6                touch_init
+                0x00000e5a       0x86 qtouch/touch.o
+                0x00000e5a                touch_init
  .text.touch_process
-                0x00000f2c       0x52 qtouch/touch.o
-                0x00000f2c                touch_process
+                0x00000ee0       0x52 qtouch/touch.o
+                0x00000ee0                touch_process
  .text.touch_timer_handler
-                0x00000f7e       0x10 qtouch/touch.o
-                0x00000f7e                touch_timer_handler
+                0x00000f32       0x10 qtouch/touch.o
+                0x00000f32                touch_timer_handler
  .text.mega_touch_timer
-                0x00000f8e       0x2e qtouch/touch.o
-                0x00000f8e                mega_touch_timer
+                0x00000f42       0x2e qtouch/touch.o
+                0x00000f42                mega_touch_timer
  .text.get_sensor_state
-                0x00000fbc       0x1e qtouch/touch.o
-                0x00000fbc                get_sensor_state
+                0x00000f70       0x1e qtouch/touch.o
+                0x00000f70                get_sensor_state
  .text.__vector_37
-                0x00000fda       0x48 qtouch/touch.o
-                0x00000fda                __vector_37
+                0x00000f8e       0x48 qtouch/touch.o
+                0x00000f8e                __vector_37
  .text.system_init
-                0x00001022       0x4e src/driver_init.o
-                0x00001022                system_init
+                0x00000fd6       0x4e src/driver_init.o
+                0x00000fd6                system_init
  .text.protected_write_io
-                0x00001070        0xe src/protected_io.o
-                0x00001070                protected_write_io
+                0x00001024        0xe src/protected_io.o
+                0x00001024                protected_write_io
  .text.Timer_init
-                0x0000107e       0x1a src/tc8.o
-                0x0000107e                Timer_init
+                0x00001032       0x1a src/tc8.o
+                0x00001032                Timer_init
  .text.check_for_aks_block
-                0x00001098       0xd2 ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
+                0x0000104c       0xd2 ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
  .text.qtm_update_qtlib_timer
-                0x0000116a       0x16 ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
-                0x0000116a                qtm_update_qtlib_timer
+                0x0000111e       0x16 ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
+                0x0000111e                qtm_update_qtlib_timer
  .text.qtm_init_sensor_key
-                0x00001180       0x3e ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
-                0x00001180                qtm_init_sensor_key
+                0x00001134       0x3e ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
+                0x00001134                qtm_init_sensor_key
  .text.qtm_key_sensors_process
-                0x000011be      0x74c ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
-                0x000011be                qtm_key_sensors_process
+                0x00001172      0x74c ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
+                0x00001172                qtm_key_sensors_process
  .text.qtm_freq_hop_autotune
-                0x0000190a      0x336 ../qtouch/lib/gcc\libqtm_freq_hop_auto_m328pb_0x0004.a(avr_freq_hop_auto_g_m328.o)
-                0x0000190a                qtm_freq_hop_autotune
+                0x000018be      0x336 ../qtouch/lib/gcc\libqtm_freq_hop_auto_m328pb_0x0004.a(avr_freq_hop_auto_g_m328.o)
+                0x000018be                qtm_freq_hop_autotune
  .text.qtm_error_handler
-                0x00001c40       0x1c ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x00001bf4       0x1c ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
  .text.generic_callback_function
-                0x00001c5c       0x1a ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x00001c10       0x1a ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
  .text.qmt_get_binding_layer_ptr
-                0x00001c76        0xa ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
-                0x00001c76                qmt_get_binding_layer_ptr
+                0x00001c2a        0xa ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x00001c2a                qmt_get_binding_layer_ptr
  .text.qtm_binding_layer_init
-                0x00001c80       0xbe ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
-                0x00001c80                qtm_binding_layer_init
+                0x00001c34       0xbe ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x00001c34                qtm_binding_layer_init
  .text.qtm_lib_start_acquisition
-                0x00001d3e       0xa0 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
-                0x00001d3e                qtm_lib_start_acquisition
+                0x00001cf2       0xa0 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x00001cf2                qtm_lib_start_acquisition
  .text.qtm_lib_acq_process
-                0x00001dde       0x10 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
-                0x00001dde                qtm_lib_acq_process
+                0x00001d92       0x10 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x00001d92                qtm_lib_acq_process
  .text.qtm_lib_post_process
-                0x00001dee      0x11c ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
-                0x00001dee                qtm_lib_post_process
+                0x00001da2      0x11c ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x00001da2                qtm_lib_post_process
  .text.select_next_channel_to_measure
-                0x00001f0a       0x66 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x00001ebe       0x66 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
  .text.qtm_measure_node
-                0x00001f70      0x182 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x00001f24      0x182 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
  .text.qtm_acquisition_process
-                0x000020f2      0x2ce ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x000020f2                qtm_acquisition_process
+                0x000020a6      0x2ce ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x000020a6                qtm_acquisition_process
  .text.qtm_ptc_init_acquisition_module
-                0x000023c0      0x10e ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x000023c0                qtm_ptc_init_acquisition_module
+                0x00002374      0x10e ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x00002374                qtm_ptc_init_acquisition_module
  .text.qtm_ptc_qtlib_assign_signal_memory
-                0x000024ce       0x14 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x000024ce                qtm_ptc_qtlib_assign_signal_memory
+                0x00002482       0x14 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x00002482                qtm_ptc_qtlib_assign_signal_memory
  .text.qtm_ptc_start_measurement_seq
-                0x000024e2      0x1f2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x000024e2                qtm_ptc_start_measurement_seq
+                0x00002496      0x1f2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x00002496                qtm_ptc_start_measurement_seq
  .text.qtm_enable_sensor_node
-                0x000026d4       0x3e ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x000026d4                qtm_enable_sensor_node
+                0x00002688       0x3e ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x00002688                qtm_enable_sensor_node
  .text.qtm_calibrate_sensor_node
-                0x00002712       0x80 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x00002712                qtm_calibrate_sensor_node
+                0x000026c6       0x80 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x000026c6                qtm_calibrate_sensor_node
  .text.qtm_m328pb_ptc_handler_eoc
-                0x00002792       0x82 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x00002792                qtm_m328pb_ptc_handler_eoc
+                0x00002746       0x82 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x00002746                qtm_m328pb_ptc_handler_eoc
  .text.libgcc.div
-                0x00002814       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x00002814                _div
-                0x00002814                __divmodhi4
- .text.libgcc   0x0000283c        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                0x0000283c                __tablejump2__
+                0x000027c8       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                0x000027c8                _div
+                0x000027c8                __divmodhi4
+ .text.libgcc   0x000027f0        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x000027f0                __tablejump2__
  .text.libgcc.mul
-                0x00002848       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
-                0x00002848                __umulhisi3
+                0x000027fc       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+                0x000027fc                __umulhisi3
  .text.libgcc.div
-                0x00002866       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x00002866                __udivmodhi4
-                0x0000288e                . = ALIGN (0x2)
+                0x0000281a       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x0000281a                __udivmodhi4
+                0x00002842                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000288e        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000288e                _exit
-                0x0000288e                exit
+ .fini9         0x00002842        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00002842                _exit
+                0x00002842                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -679,11 +680,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000288e        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00002842        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00002892                _etext = .
+                0x00002846                _etext = .
 
-.data           0x00800100       0x86 load address 0x00002892
+.data           0x00800100       0x86 load address 0x00002846
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -758,82 +759,83 @@ END GROUP
                 0x00800186                _edata = .
                 0x00800186                PROVIDE (__data_end, .)
 
-.bss            0x00800186       0x5d
+.bss            0x00800186       0x5e
                 0x00800186                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.skipFlag  0x00800186        0x1 main.o
  .bss.delayScaler
-                0x00800186        0x2 main.o
- .bss.ledMode   0x00800188        0x1 main.o
- .bss.score     0x00800189        0x1 main.o
- .bss.cScaler   0x0080018a        0x1 main.o
- .bss.curLed    0x0080018b        0x1 main.o
+                0x00800187        0x2 main.o
+ .bss.ledMode   0x00800189        0x1 main.o
+ .bss.score     0x0080018a        0x1 main.o
+ .bss.cScaler   0x0080018b        0x1 main.o
+ .bss.curLed    0x0080018c        0x1 main.o
  .bss.touch_time_counter.2416
-                0x0080018c        0x2 qtouch/touch.o
+                0x0080018d        0x2 qtouch/touch.o
  .bss.module_error_code
-                0x0080018e        0x1 qtouch/touch.o
-                0x0080018e                module_error_code
- .bss.measurement_done_touch
                 0x0080018f        0x1 qtouch/touch.o
-                0x0080018f                measurement_done_touch
- .bss.touch_postprocess_request
+                0x0080018f                module_error_code
+ .bss.measurement_done_touch
                 0x00800190        0x1 qtouch/touch.o
-                0x00800190                touch_postprocess_request
- .bss.time_to_measure_touch_flag
+                0x00800190                measurement_done_touch
+ .bss.touch_postprocess_request
                 0x00800191        0x1 qtouch/touch.o
-                0x00800191                time_to_measure_touch_flag
+                0x00800191                touch_postprocess_request
+ .bss.time_to_measure_touch_flag
+                0x00800192        0x1 qtouch/touch.o
+                0x00800192                time_to_measure_touch_flag
  .bss.qtm_local_ms_timecount
-                0x00800192        0x2 ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
-                0x00800192                qtm_local_ms_timecount
- .bss.errors    0x00800194        0x1 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x00800193        0x2 ../qtouch/lib/gcc\libqtm_touch_key_m328pb_0x0002.a(avr_touch_key_g_m328.o)
+                0x00800193                qtm_local_ms_timecount
+ .bss.errors    0x00800195        0x1 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
  .bss.current_process_id
-                0x00800195        0x1 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
- .bss.qtm_state
                 0x00800196        0x1 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
-                0x00800196                qtm_state
+ .bss.qtm_state
+                0x00800197        0x1 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x00800197                qtm_state
  .bss.ptc_seq_measure_complete_pointer
-                0x00800197        0x2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x00800198        0x2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
  .bss.ptc_lockups
-                0x00800199        0x2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x00800199                ptc_lockups
+                0x0080019a        0x2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x0080019a                ptc_lockups
  .bss.good_eocs
-                0x0080019b        0x2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x0080019b                good_eocs
+                0x0080019c        0x2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x0080019c                good_eocs
  .bss.touch_seq_lib_state
-                0x0080019d        0x1 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x0080019e        0x1 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
  .bss.current_measure_channel
-                0x0080019e        0x2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x0080019f        0x2 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
  .bss.ptc_eoc_ok_flag
-                0x008001a0        0x1 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x008001a0                ptc_eoc_ok_flag
+                0x008001a1        0x1 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x008001a1                ptc_eoc_ok_flag
  .bss.max_conversion_cycles
-                0x008001a1        0x4 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x008001a1                max_conversion_cycles
+                0x008001a2        0x4 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x008001a2                max_conversion_cycles
  *(COMMON)
- COMMON         0x008001a5       0x38 qtouch/touch.o
-                0x008001a5                qstate
-                0x008001a6                noise_filter_buffer
-                0x008001ac                qtlib_key_grp_data_set1
-                0x008001b2                freq_hop_autotune_counters
-                0x008001b5                ptc_qtlib_node_stat1
-                0x008001ba                touch_acq_signals_raw
-                0x008001bc                p_qtm_control
-                0x008001be                qtm_control
-                0x008001d7                qtlib_key_data_set1
- COMMON         0x008001dd        0x2 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
-                0x008001dd                qtm
- COMMON         0x008001df        0x4 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
-                0x008001df                qtm_acquisition_control_working_set_ptr
-                0x008001e1                qtm_raw_data_measurements_ptr
-                0x008001e3                PROVIDE (__bss_end, .)
-                0x00002892                __data_load_start = LOADADDR (.data)
-                0x00002918                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008001a6       0x38 qtouch/touch.o
+                0x008001a6                qstate
+                0x008001a7                noise_filter_buffer
+                0x008001ad                qtlib_key_grp_data_set1
+                0x008001b3                freq_hop_autotune_counters
+                0x008001b6                ptc_qtlib_node_stat1
+                0x008001bb                touch_acq_signals_raw
+                0x008001bd                p_qtm_control
+                0x008001bf                qtm_control
+                0x008001d8                qtlib_key_data_set1
+ COMMON         0x008001de        0x2 ../qtouch/lib/gcc\libqtm_binding_layer_m328pb_0x0005.a(avr_binding_layer_g_m328.o)
+                0x008001de                qtm
+ COMMON         0x008001e0        0x4 ../qtouch/lib/gcc\libqtm_acq_runtime_m328pb_0x0003.a(avr_acq_runtime_g_m328.o)
+                0x008001e0                qtm_acquisition_control_working_set_ptr
+                0x008001e2                qtm_raw_data_measurements_ptr
+                0x008001e4                PROVIDE (__bss_end, .)
+                0x00002846                __data_load_start = LOADADDR (.data)
+                0x000028cc                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008001e3        0x0
+.noinit         0x008001e4        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008001e3                _end = .
+                0x008001e4                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -928,38 +930,38 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x2609
+.debug_info     0x00000000     0x260c
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x8ea C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.5.362/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
  .debug_info    0x000008ea       0xa9 atmel_start.o
  .debug_info    0x00000993       0xb1 driver_isr.o
- .debug_info    0x00000a44      0x54f main.o
- .debug_info    0x00000f93     0x12a3 qtouch/touch.o
- .debug_info    0x00002236      0x2a7 src/driver_init.o
- .debug_info    0x000024dd       0x9b src/protected_io.o
- .debug_info    0x00002578       0x91 src/tc8.o
+ .debug_info    0x00000a44      0x552 main.o
+ .debug_info    0x00000f96     0x12a3 qtouch/touch.o
+ .debug_info    0x00002239      0x2a7 src/driver_init.o
+ .debug_info    0x000024e0       0x9b src/protected_io.o
+ .debug_info    0x0000257b       0x91 src/tc8.o
 
-.debug_abbrev   0x00000000     0x1009
+.debug_abbrev   0x00000000     0x103a
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x86e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.5.362/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
  .debug_abbrev  0x0000086e       0x63 atmel_start.o
  .debug_abbrev  0x000008d1       0x88 driver_isr.o
- .debug_abbrev  0x00000959      0x1f7 main.o
- .debug_abbrev  0x00000b50      0x306 qtouch/touch.o
- .debug_abbrev  0x00000e56      0x14e src/driver_init.o
- .debug_abbrev  0x00000fa4       0x14 src/protected_io.o
- .debug_abbrev  0x00000fb8       0x51 src/tc8.o
+ .debug_abbrev  0x00000959      0x228 main.o
+ .debug_abbrev  0x00000b81      0x306 qtouch/touch.o
+ .debug_abbrev  0x00000e87      0x14e src/driver_init.o
+ .debug_abbrev  0x00000fd5       0x14 src/protected_io.o
+ .debug_abbrev  0x00000fe9       0x51 src/tc8.o
 
-.debug_line     0x00000000     0x16c9
+.debug_line     0x00000000     0x1851
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x1a6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.5.362/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
  .debug_line    0x000001a6       0x8b atmel_start.o
  .debug_line    0x00000231       0xb3 driver_isr.o
- .debug_line    0x000002e4      0xd21 main.o
- .debug_line    0x00001005      0x43a qtouch/touch.o
- .debug_line    0x0000143f      0x169 src/driver_init.o
- .debug_line    0x000015a8       0x67 src/protected_io.o
- .debug_line    0x0000160f       0xba src/tc8.o
+ .debug_line    0x000002e4      0xea9 main.o
+ .debug_line    0x0000118d      0x43a qtouch/touch.o
+ .debug_line    0x000015c7      0x169 src/driver_init.o
+ .debug_line    0x00001730       0x67 src/protected_io.o
+ .debug_line    0x00001797       0xba src/tc8.o
 
 .debug_frame    0x00000000      0x40c
  *(.debug_frame)
@@ -970,28 +972,28 @@ END GROUP
  .debug_frame   0x000003b4       0x34 src/driver_init.o
  .debug_frame   0x000003e8       0x24 src/tc8.o
 
-.debug_str      0x00000000     0x1924
+.debug_str      0x00000000     0x192d
  *(.debug_str)
  .debug_str     0x00000000      0x318 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/Atmel/ATmega_DFP/1.5.362/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
  .debug_str     0x00000318      0x178 atmel_start.o
                                 0x1ac (size before relaxing)
  .debug_str     0x00000490       0x37 driver_isr.o
                                 0x1a8 (size before relaxing)
- .debug_str     0x000004c7      0x1ba main.o
-                                0x349 (size before relaxing)
- .debug_str     0x00000681     0x11bc qtouch/touch.o
+ .debug_str     0x000004c7      0x1c3 main.o
+                                0x352 (size before relaxing)
+ .debug_str     0x0000068a     0x11bc qtouch/touch.o
                                0x1428 (size before relaxing)
- .debug_str     0x0000183d       0xda src/driver_init.o
+ .debug_str     0x00001846       0xda src/driver_init.o
                                 0x274 (size before relaxing)
- .debug_str     0x00001917        0xd src/tc8.o
+ .debug_str     0x00001920        0xd src/tc8.o
                                 0x198 (size before relaxing)
 
-.debug_loc      0x00000000      0x7ae
+.debug_loc      0x00000000     0x14cf
  *(.debug_loc)
  .debug_loc     0x00000000       0xcb driver_isr.o
- .debug_loc     0x000000cb      0x31d main.o
- .debug_loc     0x000003e8      0x323 qtouch/touch.o
- .debug_loc     0x0000070b       0xa3 src/driver_init.o
+ .debug_loc     0x000000cb     0x103e main.o
+ .debug_loc     0x00001109      0x323 qtouch/touch.o
+ .debug_loc     0x0000142c       0xa3 src/driver_init.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1011,14 +1013,14 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x188
+.debug_ranges   0x00000000      0x1a0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 atmel_start.o
  .debug_ranges  0x00000010       0x10 driver_isr.o
- .debug_ranges  0x00000020       0xa0 main.o
- .debug_ranges  0x000000c0       0xa0 qtouch/touch.o
- .debug_ranges  0x00000160       0x18 src/driver_init.o
- .debug_ranges  0x00000178       0x10 src/tc8.o
+ .debug_ranges  0x00000020       0xb8 main.o
+ .debug_ranges  0x000000d8       0xa0 qtouch/touch.o
+ .debug_ranges  0x00000178       0x18 src/driver_init.o
+ .debug_ranges  0x00000190       0x10 src/tc8.o
 
 .debug_macro
  *(.debug_macro)

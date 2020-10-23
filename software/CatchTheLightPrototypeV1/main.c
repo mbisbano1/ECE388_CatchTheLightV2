@@ -5,7 +5,10 @@ extern volatile uint8_t measurement_done_touch;
 /*
 Static Declarations and Definitions
 */
-#define NUMLED 22
+
+#define NumberTest 1
+
+#define NUMLED 25
 #define NUMLED_0 22
 #define NUMLED_1 7
 #define NUMLED_2 17
@@ -210,18 +213,11 @@ void Next0(void)	//A B C D E F
 		PORTE = EMASK;
 	}
 	
-	curLed = ((curLed + 1)%NUMLED_0);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
-void Next1(void)	//A B
+void Next1(void)	//B C
 {
-	if(3 > curLed)		//A
-	{
-		PORTB = BMASK;
-		PORTC = CMASK&LED_BANKC_TAB[curLed];
-		PORTD = DMASK;
-		PORTE = EMASK;
-	}
 	
 	if((6 > curLed)&&(3 <= curLed))	//B
 	{
@@ -237,7 +233,24 @@ void Next1(void)	//A B
 		PORTD = DMASK;
 		PORTE = EMASK&LED_BANKE_TAB[curLed - 6];
 	}
-	curLed = ((curLed + 1)%NUMLED_1);// + ((curLed + 1)/NUMLED);
+	if((9> curLed)&&(7 <= curLed)) //C
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;
+		PORTD = DMASK;
+		PORTE = EMASK&LED_BANKE_TAB[curLed - 6];
+	}
+	if( (11 > curLed) && (9 <= curLed))	//C
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;
+		PORTD = DMASK&LED_BANKD_TAB[curLed - 9];
+		PORTE = EMASK;
+	}
+	
+	
+	
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
 void Next2(void)	//A B D E G
@@ -295,7 +308,7 @@ void Next2(void)	//A B D E G
 		PORTD = DMASK;
 		PORTE = EMASK;
 	}
-	curLed = ((curLed + 1)%NUMLED_2);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
 void Next3(void)	//A B C D G
@@ -355,7 +368,7 @@ void Next3(void)	//A B C D G
 	}
 	
 	
-	curLed = ((curLed + 1)%NUMLED_3);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
 void Next4(void)	//B C F G
@@ -406,7 +419,7 @@ void Next4(void)	//B C F G
 		PORTE = EMASK;
 	}
 	
-	curLed = ((curLed + 1)%NUMLED_4);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
 void Next5(void)	//A C D F G
@@ -458,7 +471,7 @@ void Next5(void)	//A C D F G
 		PORTE = EMASK;
 	}
 	
-	curLed = ((curLed + 1)%NUMLED_5);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
 void Next6(void)	//A C D E F G
@@ -526,7 +539,7 @@ void Next6(void)	//A C D E F G
 		PORTE = EMASK;
 	}
 	
-	curLed = ((curLed + 1)%NUMLED_6);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
 void Next7(void)	//A B C
@@ -570,7 +583,7 @@ void Next7(void)	//A B C
 		PORTE = EMASK;
 	}
 	
-	curLed = ((curLed + 1)%NUMLED_7);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
 void Next8(void)	//A B C D E F G
@@ -652,7 +665,7 @@ void Next8(void)	//A B C D E F G
 			PORTE = EMASK;
 		}
 		
-	curLed = ((curLed + 1)%NUMLED_8);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
 void Next9(void)	//A B C D F G
@@ -720,7 +733,7 @@ void Next9(void)	//A B C D F G
 		PORTE = EMASK;
 	}
 	
-	curLed = ((curLed + 1)%NUMLED_9);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
 void ReportScore(uint8_t S)
@@ -848,7 +861,7 @@ void ReportScore(uint8_t S)
 		//uh oh! Your score is probably really high dude!
 		break;
 	}
-	_delay_ms(750);
+	//_delay_ms(750);
 }
 
 
@@ -877,17 +890,29 @@ int main(void)
 
 			key_status0 = get_sensor_state(0) & 0x80;
 			
-			#if(NumberTest = 1)
+			#if(NumberTest == 1)
 			{
+				ledMode = 3 + score;
 				if((0u != key_status0))
 				{
+					if(0 < skipFlag)
+					{
+						skipFlag--;
+					}
+					else
+					{
 					score++;
+					ledMode = 3 + score;
+					skipFlag+=2;	
+					}
+					_delay_ms(20);
 				}
-				ReportScore();
+				//ReportScore();
 				
 			}
+			#endif
 			
-			#if(NumberTest = 0)
+			#if(NumberTest == 0)
 			{
 				if ((0u != key_status0))
 				{
@@ -911,6 +936,7 @@ int main(void)
 					}
 				}
 			}
+			#endif
 			
 			
 		}
