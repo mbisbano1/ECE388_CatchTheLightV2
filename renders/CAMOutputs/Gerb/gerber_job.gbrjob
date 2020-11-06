@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-11-06T00:39:19Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "CatchTheLightV2.0"
+        },
+        "Owner": "Michael Bisbano <mbisbano1@umassd.edu>",
+        "Size": {
+            "X": 45,
+            "Y": 100
+        }
+    }
+}
