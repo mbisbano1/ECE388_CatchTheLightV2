@@ -8131,9 +8131,6 @@ Source: www.kingbright.com</description>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device=""/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
 <part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
-<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
-<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
-<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330"/>
 <part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
 <part name="LED13" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2" value="Red"/>
 <part name="LED14" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2" value="Red"/>
@@ -8205,14 +8202,12 @@ Source: www.kingbright.com</description>
 <sheets>
 <sheet>
 <plain>
-<text x="265.938" y="-209.296" size="3.81" layer="91">F</text>
+<text x="265.938" y="-209.296" size="3.81" layer="91">G</text>
 <text x="213.36" y="-208.28" size="3.81" layer="91">0000001</text>
 <text x="12.7" y="-129.54" size="1.778" layer="91">Current Limiting</text>
 <text x="12.7" y="-167.64" size="1.778" layer="91">Current Limiting</text>
 <text x="15.24" y="-15.24" size="1.778" layer="91">Battery</text>
 <text x="205.74" y="-121.92" size="1.778" layer="91" rot="R90">RESET LINE PULLUP</text>
-<text x="231.14" y="-129.54" size="1.778" layer="91">Programming Signal Resistors</text>
-<text x="231.14" y="-157.48" size="1.778" layer="91">Programming Signal Resistors</text>
 <text x="114.3" y="-12.7" size="1.778" layer="91">Ring LEDs</text>
 <text x="50.8" y="-50.8" size="1.778" layer="91">Ring LEDs</text>
 <text x="256.54" y="-12.7" size="1.778" layer="91">Ring LEDs</text>
@@ -8225,8 +8220,8 @@ Source: www.kingbright.com</description>
 <text x="116.84" y="-86.36" size="1.778" layer="91">QTouch/Backup Selection</text>
 <text x="50.8" y="-58.42" size="1.778" layer="91">QTouch Sensor</text>
 <text x="50.8" y="-86.36" size="1.778" layer="91">QTouch Sensor</text>
-<text x="223.52" y="-96.52" size="1.778" layer="91">6-Pin Plug-Of-Nails Programming Header</text>
-<text x="223.52" y="-124.46" size="1.778" layer="91">6-Pin Plug-Of-Nails Programming Header</text>
+<text x="223.52" y="-96.52" size="1.778" layer="91">6-Pin Bed-Of-Nails Programming Header</text>
+<text x="223.52" y="-124.46" size="1.778" layer="91">6-Pin Bed-Of-Nails Programming Header</text>
 <text x="15.24" y="-55.88" size="1.778" layer="91">Power Switch</text>
 <text x="8.89" y="-123.952" size="1.778" layer="91">Reverse Voltage Protection</text>
 <text x="177.8" y="-187.96" size="6.4516" layer="91">Michael Bisbano</text>
@@ -8245,8 +8240,7 @@ Source: www.kingbright.com</description>
 <wire x1="220.98" y1="-93.98" x2="271.78" y2="-93.98" width="0.1524" layer="150" style="longdash"/>
 <wire x1="271.78" y1="-93.98" x2="271.78" y2="-53.34" width="0.1524" layer="150" style="longdash"/>
 <wire x1="271.78" y1="-93.98" x2="271.78" y2="-127" width="0.1524" layer="150" style="longdash"/>
-<wire x1="271.78" y1="-127" x2="271.78" y2="-162.56" width="0.1524" layer="150" style="longdash"/>
-<wire x1="271.78" y1="-162.56" x2="271.78" y2="-175.26" width="0.1524" layer="150" style="longdash"/>
+<wire x1="271.78" y1="-127" x2="271.78" y2="-144.78" width="0.1524" layer="150" style="longdash"/>
 <wire x1="220.98" y1="-93.98" x2="220.98" y2="-127" width="0.1524" layer="150" style="longdash"/>
 <wire x1="220.98" y1="-127" x2="271.78" y2="-127" width="0.1524" layer="150" style="longdash"/>
 <wire x1="154.94" y1="-93.98" x2="154.94" y2="-53.34" width="0.1524" layer="150" style="longdash"/>
@@ -8258,17 +8252,18 @@ Source: www.kingbright.com</description>
 <wire x1="38.1" y1="-172.72" x2="38.1" y2="-127" width="0.1524" layer="150" style="longdash"/>
 <wire x1="38.1" y1="-127" x2="7.62" y2="-127" width="0.1524" layer="150" style="longdash"/>
 <wire x1="38.1" y1="-127" x2="38.1" y2="-93.98" width="0.1524" layer="150" style="longdash"/>
-<wire x1="220.98" y1="-127" x2="220.98" y2="-162.56" width="0.1524" layer="150" style="longdash"/>
-<wire x1="220.98" y1="-162.56" x2="220.98" y2="-175.26" width="0.1524" layer="150" style="longdash"/>
-<wire x1="220.98" y1="-175.26" x2="271.78" y2="-175.26" width="0.1524" layer="150" style="longdash"/>
-<wire x1="220.98" y1="-162.56" x2="271.78" y2="-162.56" width="0.1524" layer="150" style="longdash"/>
-<text x="231.14" y="-165.1" size="1.778" layer="91">Fiducials</text>
-<text x="269.24" y="-172.72" size="1.778" layer="91" rot="R180">Fiducials</text>
+<wire x1="220.98" y1="-127" x2="220.98" y2="-144.78" width="0.1524" layer="150" style="longdash"/>
+<wire x1="220.98" y1="-144.78" x2="271.78" y2="-144.78" width="0.1524" layer="150" style="longdash"/>
+<text x="228.6" y="-132.08" size="1.778" layer="91">Fiducials</text>
+<text x="266.7" y="-139.7" size="1.778" layer="91" rot="R180">Fiducials</text>
 <circle x="45.72" y="-73.66" radius="5.6796125" width="0.1524" layer="94"/>
 <wire x1="40.64" y1="-53.34" x2="40.64" y2="-7.62" width="0.1524" layer="150" style="longdash"/>
 <wire x1="228.6" y1="-93.98" x2="228.6" y2="-53.34" width="0.1524" layer="150" style="longdash"/>
 <wire x1="200.66" y1="-93.98" x2="200.66" y2="-137.16" width="0.1524" layer="95" style="longdash"/>
 <wire x1="200.66" y1="-137.16" x2="220.98" y2="-137.16" width="0.1524" layer="95" style="longdash"/>
+<text x="238.506" y="-109.22" size="1.778" layer="91" rot="R180">SCK</text>
+<text x="238.76" y="-111.76" size="1.778" layer="91" rot="R180">MOSI</text>
+<text x="238.76" y="-104.14" size="1.778" layer="91" rot="R180">MISO</text>
 </plain>
 <instances>
 <instance part="C1" gate="G$1" x="177.8" y="-119.38" smashed="yes">
@@ -8296,18 +8291,6 @@ Source: www.kingbright.com</description>
 <instance part="R6" gate="G$1" x="210.82" y="-109.22" smashed="yes" rot="R90">
 <attribute name="NAME" x="209.3214" y="-113.03" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="214.122" y="-113.03" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="R3" gate="G$1" x="246.38" y="-134.62" smashed="yes">
-<attribute name="NAME" x="242.57" y="-133.1214" size="1.778" layer="95"/>
-<attribute name="VALUE" x="242.57" y="-137.922" size="1.778" layer="96"/>
-</instance>
-<instance part="R4" gate="G$1" x="246.38" y="-142.24" smashed="yes">
-<attribute name="NAME" x="242.57" y="-140.7414" size="1.778" layer="95"/>
-<attribute name="VALUE" x="242.57" y="-145.542" size="1.778" layer="96"/>
-</instance>
-<instance part="R5" gate="G$1" x="246.38" y="-149.86" smashed="yes">
-<attribute name="NAME" x="242.57" y="-148.3614" size="1.778" layer="95"/>
-<attribute name="VALUE" x="242.57" y="-153.162" size="1.778" layer="96"/>
 </instance>
 <instance part="R7" gate="G$1" x="102.87" y="-62.738" smashed="yes">
 <attribute name="NAME" x="99.06" y="-61.2394" size="1.778" layer="95"/>
@@ -8418,18 +8401,18 @@ Source: www.kingbright.com</description>
 <attribute name="VALUE" x="119.38" y="-59.436" size="1.778" layer="96" rot="R180"/>
 <attribute name="NOPOP" x="119.38" y="-56.896" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="J1" gate="G$1" x="256.54" y="-111.76" smashed="yes">
-<attribute name="NAME" x="251.45376875" y="-99.0444" size="1.271559375" layer="95"/>
-<attribute name="VALUE" x="251.4598" y="-121.9204" size="1.27005" layer="96"/>
+<instance part="J1" gate="G$1" x="261.62" y="-111.76" smashed="yes">
+<attribute name="NAME" x="256.53376875" y="-99.0444" size="1.271559375" layer="95"/>
+<attribute name="VALUE" x="256.5398" y="-121.9204" size="1.27005" layer="96"/>
 </instance>
 <instance part="R9" gate="G$1" x="193.04" y="-73.66" smashed="yes" rot="R90">
 <attribute name="NAME" x="191.5414" y="-77.47" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="196.342" y="-77.47" size="1.778" layer="96" rot="R90"/>
 <attribute name="NOPOP" x="198.374" y="-78.232" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="U$4" gate="G$1" x="236.22" y="-170.18" smashed="yes"/>
-<instance part="U$5" gate="G$1" x="246.38" y="-170.18" smashed="yes"/>
-<instance part="U$6" gate="G$1" x="256.54" y="-170.18" smashed="yes"/>
+<instance part="U$4" gate="G$1" x="233.68" y="-137.16" smashed="yes"/>
+<instance part="U$5" gate="G$1" x="243.84" y="-137.16" smashed="yes"/>
+<instance part="U$6" gate="G$1" x="254" y="-137.16" smashed="yes"/>
 <instance part="U1" gate="A" x="71.12" y="-109.22" smashed="yes">
 <attribute name="NAME" x="137.5156" y="-100.1014" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 <attribute name="VALUE" x="136.8806" y="-102.6414" size="2.0828" layer="96" ratio="6" rot="SR0"/>
@@ -8474,8 +8457,8 @@ Source: www.kingbright.com</description>
 <instance part="P+5" gate="VCC" x="193.04" y="-63.5" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="193.04" y="-63.5" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="GND6" gate="1" x="238.76" y="-119.888" smashed="yes">
-<attribute name="VALUE" x="236.22" y="-118.872" size="1.778" layer="96" rot="R180"/>
+<instance part="GND6" gate="1" x="243.84" y="-119.888" smashed="yes">
+<attribute name="VALUE" x="241.3" y="-118.872" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="P+6" gate="VCC" x="228.6" y="-99.06" smashed="yes">
 <attribute name="VALUE" x="228.6" y="-99.06" size="1.778" layer="96"/>
@@ -8494,10 +8477,9 @@ Source: www.kingbright.com</description>
 <net name="GND" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="6"/>
-<wire x1="248.92" y1="-116.84" x2="241.3" y2="-116.84" width="0.1524" layer="91"/>
+<wire x1="254" y1="-116.84" x2="243.84" y2="-116.84" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="241.3" y1="-116.84" x2="238.76" y2="-116.84" width="0.1524" layer="91"/>
-<wire x1="238.76" y1="-116.84" x2="238.76" y2="-117.348" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="-116.84" x2="243.84" y2="-117.348" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="218.44" y1="-81.28" x2="218.44" y2="-83.82" width="0.1524" layer="91"/>
@@ -8560,11 +8542,6 @@ Source: www.kingbright.com</description>
 </net>
 <net name="PB4" class="0">
 <segment>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="241.3" y1="-134.62" x2="231.14" y2="-134.62" width="0.1524" layer="91"/>
-<label x="231.14" y="-134.62" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <pinref part="LED22" gate="G$1" pin="C"/>
 <wire x1="48.26" y1="-45.72" x2="48.26" y2="-35.56" width="0.1524" layer="91"/>
 <label x="48.26" y="-45.72" size="1.778" layer="95" xref="yes"/>
@@ -8574,13 +8551,13 @@ Source: www.kingbright.com</description>
 <label x="63.5" y="-152.4" size="1.778" layer="95" rot="R180"/>
 <pinref part="U1" gate="A" pin="(PCINT4/MISO)_PB4"/>
 </segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="254" y1="-104.14" x2="243.84" y2="-104.14" width="0.1524" layer="91"/>
+<label x="243.84" y="-104.14" size="1.778" layer="95" rot="R180"/>
+</segment>
 </net>
 <net name="PB3" class="0">
-<segment>
-<pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="241.3" y1="-142.24" x2="231.14" y2="-142.24" width="0.1524" layer="91"/>
-<label x="231.14" y="-142.24" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
 <segment>
 <pinref part="LED21" gate="G$1" pin="C"/>
 <wire x1="58.42" y1="-35.56" x2="58.42" y2="-45.72" width="0.1524" layer="91"/>
@@ -8591,13 +8568,13 @@ Source: www.kingbright.com</description>
 <label x="63.5" y="-149.86" size="1.778" layer="95" rot="R180"/>
 <pinref part="U1" gate="A" pin="(PCINT3/OC2A/MOSI)_PB3"/>
 </segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="4"/>
+<wire x1="254" y1="-111.76" x2="243.84" y2="-111.76" width="0.1524" layer="91"/>
+<label x="243.84" y="-111.76" size="1.778" layer="95" rot="R180"/>
+</segment>
 </net>
 <net name="PB5" class="0">
-<segment>
-<pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="241.3" y1="-149.86" x2="231.14" y2="-149.86" width="0.1524" layer="91"/>
-<label x="231.14" y="-149.86" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
 <segment>
 <pinref part="LED23" gate="G$1" pin="C"/>
 <wire x1="261.62" y1="-81.28" x2="261.62" y2="-86.36" width="0.1524" layer="91"/>
@@ -8607,6 +8584,11 @@ Source: www.kingbright.com</description>
 <wire x1="144.78" y1="-152.4" x2="152.4" y2="-152.4" width="0.1524" layer="91"/>
 <label x="152.4" y="-152.4" size="1.778" layer="95"/>
 <pinref part="U1" gate="A" pin="PB5_(SCK/PCINT5)"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="3"/>
+<wire x1="254" y1="-109.22" x2="243.84" y2="-109.22" width="0.1524" layer="91"/>
+<label x="243.84" y="-109.22" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="LED_ANODE" class="0">
@@ -8990,49 +8972,13 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="5"/>
-<wire x1="248.92" y1="-114.3" x2="238.76" y2="-114.3" width="0.1524" layer="91"/>
-<label x="238.76" y="-114.3" size="1.778" layer="95" rot="R180"/>
+<wire x1="254" y1="-114.3" x2="243.84" y2="-114.3" width="0.1524" layer="91"/>
+<label x="243.84" y="-114.3" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <wire x1="144.78" y1="-121.92" x2="152.4" y2="-121.92" width="0.1524" layer="91"/>
 <label x="149.86" y="-121.92" size="1.778" layer="95"/>
 <pinref part="U1" gate="A" pin="PC6_(RESET/PCINT14)"/>
-</segment>
-</net>
-<net name="MISO" class="0">
-<segment>
-<pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="251.46" y1="-134.62" x2="261.62" y2="-134.62" width="0.1524" layer="91"/>
-<label x="261.62" y="-134.62" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="248.92" y1="-104.14" x2="238.76" y2="-104.14" width="0.1524" layer="91"/>
-<label x="238.76" y="-104.14" size="1.778" layer="95" rot="R180"/>
-</segment>
-</net>
-<net name="MOSI" class="0">
-<segment>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="251.46" y1="-142.24" x2="261.62" y2="-142.24" width="0.1524" layer="91"/>
-<label x="261.62" y="-142.24" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="4"/>
-<wire x1="248.92" y1="-111.76" x2="238.76" y2="-111.76" width="0.1524" layer="91"/>
-<label x="238.76" y="-111.76" size="1.778" layer="95" rot="R180"/>
-</segment>
-</net>
-<net name="SCK" class="0">
-<segment>
-<pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="251.46" y1="-149.86" x2="261.62" y2="-149.86" width="0.1524" layer="91"/>
-<label x="261.62" y="-149.86" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="3"/>
-<wire x1="248.92" y1="-109.22" x2="238.76" y2="-109.22" width="0.1524" layer="91"/>
-<label x="238.76" y="-109.22" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="QTOUCH" class="0">
@@ -9128,7 +9074,7 @@ Source: www.kingbright.com</description>
 <pinref part="P+6" gate="VCC" pin="VCC"/>
 <wire x1="228.6" y1="-101.6" x2="228.6" y2="-106.68" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="2"/>
-<wire x1="228.6" y1="-106.68" x2="248.92" y2="-106.68" width="0.1524" layer="91"/>
+<wire x1="228.6" y1="-106.68" x2="254" y2="-106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="AREF"/>
