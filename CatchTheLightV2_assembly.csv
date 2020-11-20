@@ -1,0 +1,32 @@
+﻿UUID,Qty,Self Sourced,Value,Device,Package,Parts,Description
+R-2019-19,1.00,,sl2305,,sot23,T1,P-FET
+R-2019-06,1.00,,0,,0805,R8,Zero Ohm resistor
+R-2019-32,3,,100K,,0805,"R6, R7, R9",100K resistor.
+R-2019-02,1,,330,,0805,R1,330 resistor
+L-2020-48,1,,ATMEGA328PB,,TQFP-32,U1,Atmega 328 PB
+R-2019-14,1,,Green,,0805,LED2,Green LED
+R-2019-15,24,,Red,,0805,"LED1, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18, LED19, LED20, LED21, LED22, LED23, LED24, LED25",Red LED
+R-2019-01,3,,100nF,,0805,"C1, C2, C3",100 nF 
+L-2019-90,1,,CR2032,,,BAT1,Battery Holder
+L-2020-60,1,,BTN-ALT,,BTN,PB2,Push Button
+L-2020-59,1,,SPDT,,SMD,PB1,Toggle Slide Switch
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
