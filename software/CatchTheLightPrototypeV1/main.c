@@ -5,8 +5,11 @@ extern volatile uint8_t measurement_done_touch;
 /*
 Static Declarations and Definitions
 */
+#define GAME_SPEED 90
+#define ANIMATION_SPEED 30
+#define DELAY_SPEED 1000
 
-#define NumberTest 1
+#define NumberTest 0
 
 #define NUMLED 25
 #define NUMLED_0 22
@@ -44,9 +47,14 @@ static uint8_t ledMode;
 #define DISPLAY7	10
 #define DISPLAY8	11
 #define DISPLAY9	12
-static uint16_t delayScaler;
+#define LEDSOFF		13
+#define NEWGAMEANIMATE 14
+#define DISPLAYX	15
+static uint16_t delayScaler = 0;
 static uint8_t skipFlag = 0;
-
+static uint8_t loopFlag = 0;
+static uint8_t curLedWhenPressed = 0;
+static uint8_t wrappedAround = 0;
 
 
 //static uint8_t	LED_BANKB_TAB[] = {	0xFE,	0xFD,	0xFB,	0xF7,	0xEF,	0xDF,	0xFF,	0xFF};
@@ -132,7 +140,13 @@ void NextLed(void)
 		PORTD = DMASK;
 		PORTE = EMASK;		
 	}
-	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
+	curLed = ((curLed + 1)%22);
+	if(curLed == ((curLedWhenPressed+2)%22))
+	{
+		loopFlag = 0;
+	}
+	//if(curLed == 0)
+	//curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 // Segments A - G
 //	A: D1 - D3
@@ -736,6 +750,109 @@ void Next9(void)	//A B C D F G
 	curLed = ((curLed + 1)%NUMLED);// + ((curLed + 1)/NUMLED);
 }
 
+void NextX(void)
+{
+	if(4 > curLed)		//A
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;	//&LED_BANKC_TAB[curLed];
+		PORTD = DMASK;
+		PORTE = EMASK;
+	}
+	
+	if((6 > curLed)&&(4 <= curLed))	//B
+	{
+		PORTB = BMASK;
+		PORTC = CMASK&LED_BANKC_TAB[curLed];
+		PORTD = DMASK;
+		PORTE = EMASK;
+	}
+	if((7 > curLed)&&(6 <= curLed))	//B
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;
+		PORTD = DMASK;
+		PORTE = EMASK&LED_BANKE_TAB[curLed - 6];
+	}
+	
+	if((9> curLed)&&(7 <= curLed)) //C
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;
+		PORTD = DMASK;
+		PORTE = EMASK&LED_BANKE_TAB[curLed - 6];
+	}
+	if( (10 > curLed) && (9 <= curLed))	//C
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;
+		PORTD = DMASK&LED_BANKD_TAB[curLed - 9];
+		PORTE = EMASK;
+	}
+	
+	if( (15 > curLed) && (10 <= curLed))	//D
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;
+		PORTD = DMASK;	//&LED_BANKD_TAB[curLed - 9];
+		PORTE = EMASK;
+	}
+	
+	if( (17 > curLed) && (15 <= curLed))	//E
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;
+		PORTD = DMASK&LED_BANKD_TAB[curLed - 9];
+		PORTE = EMASK;
+	}
+	if( (18 > curLed) && (17 <= curLed))	//E
+	{
+		PORTB = BMASK&LED_BANKB_TAB[curLed - 17];
+		PORTC = CMASK;
+		PORTD = DMASK;
+		PORTE = EMASK;
+	}
+	
+	if( (21 > curLed) && (18 <= curLed))	//F
+	{
+		PORTB = BMASK&LED_BANKB_TAB[curLed - 17];
+		PORTC = CMASK;
+		PORTD = DMASK;
+		PORTE = EMASK;
+	}
+	if(curLed == 21)
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;	//&LED_BANKC_TAB[curLed];
+		PORTD = DMASK;
+		PORTE = EMASK;
+	}
+	
+	
+	if( (25 > curLed) && (22 <= curLed))	//G
+	{
+		PORTB = BMASK&LED_BANKB_TAB[curLed - 17];
+		PORTC = CMASK;
+		PORTD = DMASK;
+		PORTE = EMASK;
+	}
+	
+	curLed = ((curLed + 1)%NUMLED);
+}
+
+
+
+
+void NoLeds(void)
+{
+	PORTB = BMASK;
+	PORTC = CMASK;
+	PORTD = DMASK;
+	PORTE = EMASK;
+}
+
+
+
 void ReportScore(uint8_t S)
 {
 	uint8_t hundreds = S/100;
@@ -779,8 +896,9 @@ void ReportScore(uint8_t S)
 				//uh oh! Your score is probably really high dude!
 				break;
 		}
-		
-		_delay_ms(750);
+		_delay_ms(1500);
+		ledMode = LEDSOFF; 
+		_delay_ms(500);
 	}
 	if(tens || hundreds)
 	{
@@ -820,7 +938,9 @@ void ReportScore(uint8_t S)
 			//uh oh! Your score is probably really high dude!
 			break;
 		}
-		_delay_ms(750);
+		_delay_ms(1500);
+		ledMode = LEDSOFF;
+		_delay_ms(500);
 	}
 	
 	
@@ -861,7 +981,81 @@ void ReportScore(uint8_t S)
 		//uh oh! Your score is probably really high dude!
 		break;
 	}
-	//_delay_ms(750);
+	_delay_ms(1500);
+	curLed = 0;
+	ledMode = NEWGAMEANIMATE;
+	//ledMode = NORMALMODE;
+}
+
+void NewGame(void)					// Restore the game to starting conditions!
+{	
+	//loopFlag = 1;
+	//curLed = 0;
+	//curLedWhenPressed = 0;
+	ClearLed();
+	score = 0;
+	NewGameAnimation();
+	
+}
+void NewGameAnimationNextLed(void)
+{
+	if(6 > curLed)
+	{
+		PORTB = BMASK;
+		PORTC = CMASK&LED_BANKC_TAB[curLed];
+		PORTD = DMASK;
+		PORTE = EMASK;
+	}
+	if( (9 > curLed) && (6 <= curLed))	// 8 + 6
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;
+		PORTD = DMASK;
+		PORTE = EMASK&LED_BANKE_TAB[curLed - 6];
+	}
+	if( (17 > curLed) && (9 <= curLed))
+	{
+		PORTB = BMASK;
+		PORTC = CMASK;
+		PORTD = DMASK&LED_BANKD_TAB[curLed - 9];
+		PORTE = EMASK;
+	}
+	if( (25 > curLed) && (17 <= curLed))
+	{
+		PORTB = BMASK&LED_BANKB_TAB[curLed - 17];
+		PORTC = CMASK;
+		PORTD = DMASK;
+		PORTE = EMASK;
+	}
+	curLed -= 1;
+	if(curLed > 22)
+	{
+		curLed = 22;
+		wrappedAround++;
+		
+	}
+	if((curLed == 0) && wrappedAround)
+	{
+		ledMode = NORMALMODE;
+		curLedWhenPressed = 0;
+		loopFlag = 1;
+	}
+}
+
+
+void NewGameAnimation(void)			// basically backwards NextLed() function!
+{
+	//curLed = 0;
+	ClearLed();
+	ledMode = NEWGAMEANIMATE;
+}
+
+void FlashX(void)
+{
+	ledMode = DISPLAYX;
+	_delay_ms(750);
+	ledMode = LEDSOFF;
+	_delay_ms(750);
 }
 
 
@@ -878,7 +1072,10 @@ int main(void)
 	ledIntSetup();
 	/* Enable interrupts */
 	cpu_irq_enable();
+	
+	NewGameAnimation();
 
+	
 	/** If any of the two self-capacitance buttons is touched, the LED is turned ON
 	 * When touch is released, the LED is turned OFF
 	 */
@@ -916,23 +1113,41 @@ int main(void)
 			{
 				if ((0u != key_status0))
 				{
-					if(0 < skipFlag)
+					if(0 < loopFlag)
 					{
-						skipFlag = 0;
-						break;
+						// Don't process touch!
 					}
 					
-					ledMode = PAUSEDMODE;
-					if(TARGETLED == curLed)		// Target Hit!
+					//ledMode = PAUSEDMODE;
+					else if(TARGETLED == curLed)		// Target Hit!
 					{
-						score++;
+						score++;						// increment the player's score
+						loopFlag = 1;					// set the loopFlag so that repeat touches are not processed
+						curLedWhenPressed = curLed;		// store current led value for comparison later (to clear loopFlag lock)...
+						ledMode = 2;//PAUSEDMODE;		// Put game into paused mode, LED holds on Target LED.
 					}
 					else
-					{
-						ReportScore(score);
-						skipFlag = 1;
-						score = 0;				//Reset game to start state...
-						ledMode = NORMALMODE;
+					{	
+						//ledMode = DISPLAYX;
+						//_delay_ms(750);
+						//ledMode = LEDSOFF;
+						//_delay_ms(750);
+						FlashX();
+						
+						loopFlag = 1;
+						curLedWhenPressed = curLed;
+						ReportScore(score);				// Run the Score Report routine
+						NewGame();
+						
+						//ReportScore(10*score + 2);	
+						//NewGame();
+						//score = 0;						
+						//loopFlag = 1;					// set the loopFlag so that repeat touches are not processed
+						//curLedWhenPressed = curLed;
+						//ledMode = 2;//PAUSEDMODE;
+						//skipFlag = 2;
+						//score = 0;				//Reset game to start state...
+						//ledMode = NORMALMODE;
 					}
 				}
 			}
@@ -947,8 +1162,8 @@ ISR (TIMER0_COMPB_vect)
 {
 	switch(ledMode)
 	{
-		case NORMALMODE:
-			if(150 == cScaler)	//cScaler of 16 is fast but okay, 100 is slow enough to check each LED
+		case 1://NORMALMODE
+			if(GAME_SPEED == cScaler)	//150 for visual test
 			{
 				NextLed();
 				cScaler = 0;
@@ -956,56 +1171,182 @@ ISR (TIMER0_COMPB_vect)
 			cScaler++;
 			break;
 		
-		case PAUSEDMODE:
+		case 2://PAUSEDMODE:
 			delayScaler++;
-			if(3000 == delayScaler)
+			if(DELAY_SPEED == delayScaler)
 			{
-				ledMode = NORMALMODE;
+				ledMode = 1;//NORMALMODE;
 				delayScaler = 0;
 			}
 			break;
 		
 		case DISPLAY0:
 			Next0();
+			/*
+			delayScaler++;
+			if(6000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;	
+			}
+			*/
 			break;
 		
 		case DISPLAY1:
 			Next1();
+			/*
+			delayScaler++;
+			if(6000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;
+			}
+			*/
 			break;
 		
 		case DISPLAY2:
 			Next2();
+			/*
+			delayScaler++;
+			if(6000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;
+			}
+			*/
 			break;
 		
 		case DISPLAY3:
 			Next3();
+			/*
+			delayScaler++;
+			if(6000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;
+			}
+			*/
 			break;
 		
 		case DISPLAY4:
 			Next4();
+			/*
+			delayScaler++;
+			if(6000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;
+			}
+			*/
 			break;
 		
 		case DISPLAY5:
 			Next5();
+			/*
+			delayScaler++;
+			if(6000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;
+			}
+			*/
 			break;
 		
 		case DISPLAY6:
 			Next6();
+			/*
+			delayScaler++;
+			if(6000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;
+			}
+			*/
 			break;
 			
 		case DISPLAY7:
 			Next7();
+			/*
+			delayScaler++;
+			if(6000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;
+			}
+			*/
 			break;
 			
 		case DISPLAY8:
 			Next8();
+			/*
+			delayScaler++;
+			if(6000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;
+			}
+			*/
 			break;
 			
 		case DISPLAY9:
 			Next9();
+			/*
+			delayScaler++;
+			if(9000 == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				score = 0;
+				delayScaler = 0;
+			}
+			*/
 			break;
 		
+		case LEDSOFF:
+			NoLeds();
+			//delayScaler++;
+			//if(000 == delayScaler)
+			//{
+			//	ledMode = NORMALMODE;
+			//	score = 0;
+			//	delayScaler = 0;
+			//}
+			break;
+			
+		case NEWGAMEANIMATE:
+			//NewGameAnimationNextLed();
+			if(ANIMATION_SPEED == cScaler)	//150 for visual test
+			{
+				NewGameAnimationNextLed();
+				cScaler = 0;
+			}
+			cScaler++;
+			
+			break;
+			
+		case DISPLAYX:
+			delayScaler++;
+			NextX();
+			/*
+			if(DELAY_SPEED == delayScaler)
+			{
+				ledMode = NORMALMODE;
+				delayScaler = 0;
+			}
+			*/
+			break;
+			
 		default:
+			//uhoh brother you don't belong in this town
+		
 		break;
 	}
 }
