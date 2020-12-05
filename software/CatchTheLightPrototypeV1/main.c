@@ -992,7 +992,11 @@ void NewGame(void)					// Restore the game to starting conditions!
 	//loopFlag = 1;
 	//curLed = 0;
 	//curLedWhenPressed = 0;
+	cScaler = 0;
+	delayScaler = 0;
 	ClearLed();
+	cScaler = 0;
+	delayScaler = 0;
 	score = 0;
 	NewGameAnimation();
 	
@@ -1221,15 +1225,7 @@ ISR (TIMER0_COMPB_vect)
 		
 		case DISPLAY3:
 			Next3();
-			/*
-			delayScaler++;
-			if(6000 == delayScaler)
-			{
-				ledMode = NORMALMODE;
-				score = 0;
-				delayScaler = 0;
-			}
-			*/
+			
 			break;
 		
 		case DISPLAY4:
@@ -1333,7 +1329,7 @@ ISR (TIMER0_COMPB_vect)
 			break;
 			
 		case DISPLAYX:
-			delayScaler++;
+			//delayScaler++;
 			NextX();
 			/*
 			if(DELAY_SPEED == delayScaler)
