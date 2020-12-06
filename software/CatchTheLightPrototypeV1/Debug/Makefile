@@ -60,6 +60,7 @@ C_SRCS +=  \
 ../atmel_start.c \
 ../driver_isr.c \
 ../examples/src/touch_example.c \
+../LED_Animations.c \
 ../main.c \
 ../qtouch/touch.c \
 ../src/driver_init.c \
@@ -77,6 +78,7 @@ OBJS +=  \
 atmel_start.o \
 driver_isr.o \
 examples/src/touch_example.o \
+LED_Animations.o \
 main.o \
 qtouch/touch.o \
 src/driver_init.o \
@@ -87,6 +89,7 @@ OBJS_AS_ARGS +=  \
 atmel_start.o \
 driver_isr.o \
 examples/src/touch_example.o \
+LED_Animations.o \
 main.o \
 qtouch/touch.o \
 src/driver_init.o \
@@ -97,6 +100,7 @@ C_DEPS +=  \
 atmel_start.d \
 driver_isr.d \
 examples/src/touch_example.d \
+LED_Animations.d \
 main.d \
 qtouch/touch.d \
 src/driver_init.d \
@@ -107,6 +111,7 @@ C_DEPS_AS_ARGS +=  \
 atmel_start.d \
 driver_isr.d \
 examples/src/touch_example.d \
+LED_Animations.d \
 main.d \
 qtouch/touch.d \
 src/driver_init.d \
@@ -142,6 +147,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 examples/src/touch_example.o: ../examples/src/touch_example.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)D:\Program Files\Atmel_Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"../Config" -I"../include" -I"../utils" -I"../utils/assembler" -I".." -I"../documentation" -I"../examples/include" -I"../qtouch" -I"../qtouch/include" -I"D:\Program Files\Atmel_Studio\7.0\Packs\Atmel\ATmega_DFP\1.5.362\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328pb -B "D:\Program Files\Atmel_Studio\7.0\Packs\Atmel\ATmega_DFP\1.5.362\gcc\dev\atmega328pb" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./LED_Animations.o: .././LED_Animations.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)D:\Program Files\Atmel_Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"../Config" -I"../include" -I"../utils" -I"../utils/assembler" -I".." -I"../documentation" -I"../examples/include" -I"../qtouch" -I"../qtouch/include" -I"D:\Program Files\Atmel_Studio\7.0\Packs\Atmel\ATmega_DFP\1.5.362\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328pb -B "D:\Program Files\Atmel_Studio\7.0\Packs\Atmel\ATmega_DFP\1.5.362\gcc\dev\atmega328pb" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

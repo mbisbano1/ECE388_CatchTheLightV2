@@ -8,6 +8,8 @@ driver_isr.c
 
 examples\src\touch_example.c
 
+LED_Animations.c
+
 main.c
 
 qtouch\touch.c

@@ -338,6 +338,9 @@
     <Compile Include="examples\src\touch_example.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="GameSettings.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\atmel_start_pins.h">
       <SubType>compile</SubType>
     </Compile>
@@ -357,6 +360,15 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\tc8.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ISR_SwitchCase.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LED_Animations.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LED_Animations.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
