@@ -298,13 +298,20 @@ int main(void)
 			
 			key_status0 = get_sensor_state(0) & 0x80;
 			
-			#if(NumberTest == 1)
-			{		
+			#if(ReportScoreTest != 0)
+				ReportScore(ReportScoreTest);
+				ledMode = LEDSOFF;
+				_delay_ms(5000);				
+			#endif			
+			
+			#if(RandomNumberTest == 1)
 				DetermineNewRandom();
 				ReportScore(RandomValue%9);
 				ledMode = LEDSOFF;
 				_delay_ms(2000);
-				/*
+			#endif
+				
+			#if(NumberDisplayTest == 1)			
 				ledMode = 3 + score;
 				if((0u != key_status0))
 				{
@@ -314,17 +321,16 @@ int main(void)
 					}
 					else
 					{
-					score++;
-					ledMode = 3 + score;
-					skipFlag+=2;	
+						score++;
+						ledMode = 3 + score;
+						skipFlag+=2;	
 					}
 					_delay_ms(20);
-				}
-				*/	
+				}		
 			}
 			#endif
 			
-			#if(NumberTest == 0)
+			#if( (NumberDisplayTest == 0) && (RandomNumberTest == 0) && (ReportScoreTest == 0) )
 			{
 				if ((0u != key_status0))
 				{	

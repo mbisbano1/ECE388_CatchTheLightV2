@@ -9,8 +9,9 @@
 #ifndef GAMESETTINGS_H_
 #define GAMESETTINGS_H_
 
-
-#define NumberTest			0		// 0 is default game mode, 1 puts board in number test mode...
+#define ReportScoreTest		0		// 0 is default game mode, numeric value will send the numeric value to ReportScore function.
+#define RandomNumberTest	0		// 0 is default game mode, 1 puts board in random number test mode...
+#define NumberDisplayTest	0		// 0 is default game mode, 1 puts board in number test mode...
 #define IncreaseSpeed		1		// 0 is default game mode, 1 increases the speed of light slightly on successful hit.
 #define DirectionTricking	0		// 0 is default game mode, 1 allows the game to reverse direction randomly to trick the player.
 #define FancyAnimations		1		// 0 is default game mode, 1 allows fancy animations to occur.. (larger program size).
