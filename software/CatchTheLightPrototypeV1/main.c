@@ -3,10 +3,7 @@
 extern volatile uint8_t measurement_done_touch;
 
 #include "GameSettings.h"
-#include "LED_Animations.h"
-#include "ISR_SwitchCase.h"
-#define F_CPU 8000000
-#include <util/delay.h>
+
 
 #if(DirectionTricking == 1)
 #define TARGETLEDREV 0
@@ -30,7 +27,10 @@ uint8_t DetermineNewRandom(void)
 	return RandomValue;
 }
 #endif
-
+#include "LED_Animations.h"
+#include "ISR_SwitchCase.h"
+#define F_CPU 8000000
+#include <util/delay.h>
 
 
 
@@ -264,12 +264,13 @@ void FlashX(void)
 	_delay_ms(750);
 }
 
+#if( IncreaseSpeed ==1 )
 void SpeedUp(void)
 {
 	double val = ((double) GAME_SPEED)*(1-SpeedUpPercent);
 	GAME_SPEED = ceil(val);
 }
-
+#endif 
 
 int main(void)
 {

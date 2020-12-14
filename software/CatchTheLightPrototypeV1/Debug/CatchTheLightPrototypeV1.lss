@@ -5945,8 +5945,8 @@ void FlashX(void)
     21ae:	08 95       	ret
 
 000021b0 <SpeedUp>:
-}
 
+#if( IncreaseSpeed ==1 )
 void SpeedUp(void)
 {
 	double val = ((double) GAME_SPEED)*(1-SpeedUpPercent);
@@ -6028,7 +6028,7 @@ void ledIntSetup(void)
 			}
 			#endif
 			
-			#if((NumberDisplayTest == 0) && (RandomNumberTest == 0))
+			#if( (NumberDisplayTest == 0) && (RandomNumberTest == 0) && (ReportScoreTest == 0) )
 			{
 				if ((0u != key_status0))
     220c:	88 23       	and	r24, r24
